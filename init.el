@@ -11,13 +11,15 @@
 
 ;; Package Management
 ;; ---------------------
+(require 'init-ui)
 (require 'init-packages)
 
-(require 'init-company)
-(require 'init-popwin)
+(require 'init-completion)
+(require 'init-smartparens)
+(require 'init-snippet)
 
-(require 'init-ui)
 (require 'init-better-defaults)
+(require 'init-popwin)
 
 (require 'init-org)
 (require 'init-js2-mode)

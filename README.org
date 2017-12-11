@@ -1,0 +1,54 @@
+
+* Emacs Config
+
+** 配置说明
+   1. 所有按键绑定都归纳在lisp/init-keybindings.el文件中
+   2. 配置文件按功能区分
+
+** 配置目录
+   .emacs.d
+    ├── init.el       配置文件的主要入口
+    ├── elpa         所有插件都安装在这里
+    ├── README.org   说明文档
+    └──lisp          整理好的分类配置
+      ├── init-better-defaults.el   更好的默认配置
+      ├── init-completion.el        补全配置
+      ├── init-evil.el              Vim模式的配置
+      ├── init-js2-mode.el          JS2 Mode的配置
+      ├── init-keybindings.el       按键绑定配置
+      ├── init-org.el               Org Mode配置
+      ├── init-packages.el          安装插件配置
+      ├── init-popwin.el            弹窗配置
+      ├── init-snippet.el           代码块配置
+      └── init-ui.el                界面配置
+
+** 引用插件说明
+   - company              补全插件
+   - hungry-delete        删除多个空格
+   - swiper               增强<M-x>
+   - counsel              增强<M-x>
+   - smartparens          括号匹配
+   - popwin               弹窗
+   - helm-ag              全局搜索
+   - flycheck             代码检查
+   - yasnippet            代码块补全
+   - auto-yasnippet       代码块补全
+   - web-mode             前端Major mode
+   - js2-mode             JS Major Mode
+   - evil                 Vim模拟器
+   - js2-refactor         js代码结构化
+   - nodejs-repl          执行缓冲区代码
+   - exec-path-from-shell 
+   - monokai-theme        主题
+
+** 安装方法
+#+BEGIN_SRC git
+# 从github中下载配置文件
+git clone http://github.com/wjh876531738/emacs.d
+
+# 删除Home目录下默认的.emacs文件
+rm ~/.emacs
+
+# 把配置文件重命名并放到合适的位置
+mv emacs.d ~/.emacs.d
+#+END_SRC

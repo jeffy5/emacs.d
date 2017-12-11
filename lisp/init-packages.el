@@ -41,10 +41,12 @@
 		      ;; --- Snippet ---
 		      yasnippet
 		      auto-yasnippet
+		      ;; --- Evil ---
+		      evil
+		      evil-surround
 		      ;; --- Major Mode ---
 		      web-mode
 		      js2-mode
-		      evil
 		      ;; --- Minor Mode ---
 		      js2-refactor
 		      nodejs-repl

@@ -18,7 +18,6 @@
        '(("\\.html\\'" . web-mode))
        auto-mode-alist))
 
-
 ;; 设置web mode的缩进大小配置
 (defun wjh-web-mode-indent-setup ()
   (setq web-mode-markup-indent-offset 2) ; web-mode, html tag in html file
@@ -29,7 +28,6 @@
 
 ;; 为js2mode 添加钩子 js2-refactore-mode(Minor Mode)
 (add-hook 'js2-mode-hook #'js2-refactor-mode)
-(js2r-add-keybindings-with-prefix "C-c C-m")
 
 ;; 搜索被选中的或光标下的字符串
 (defun occur-dwim ()
@@ -68,6 +66,5 @@
 
 ;; 调用Eslint语法检查
 (add-hook 'js2-mode-hook 'flycheck-mode)
-
 
 (provide 'init-js2-mode)

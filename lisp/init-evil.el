@@ -1,8 +1,24 @@
+;;
+;;    /  _/  ____     (_)  / /_            ___     _   __   (_)  / /        ___ 
+;;    / /   / __ \   / /  / __/  ______   / _ \   | | / /  / /  / /        / _ \
+;;  _/ /   / / / /  / /  / /_   /_____/  /  __/   | |/ /  / /  / /   _    /  __/
+;; /___/  /_/ /_/  /_/   \__/            \___/    |___/  /_/  /_/   (_)   \___/ 
+;;                                                                              
+;;     __
+;;    / /
+;;   / / 
+;;  / /  
+;; /_/   
+;;
 ;; 启动evil
 (evil-mode 1)
 
-;; 将 insert state map 中的快捷键清空
+;; 将 insert 模式中的快捷键清空
 (setcdr evil-insert-state-map nil)
 (define-key evil-insert-state-map [escape] 'evil-normal-state)
+
+;; Evil Surround
+(require 'evil-surround)
+(global-evil-surround-mode)
 
 (provide 'init-evil)

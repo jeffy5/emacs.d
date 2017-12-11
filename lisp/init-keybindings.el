@@ -14,21 +14,15 @@
 ;; 打开最近修改的文件
 (global-set-key (kbd "C-x C-r") 'recentf-open-files)
 
-;; org-agend的快捷键
-(global-set-key (kbd "C-c a") 'org-agenda)
-
 ;; 代码缩进
 ;; (global-set-key (kbd "C-M-\\") 'indent-region-or-buffer)
 
-;; Hippie补全
-(global-set-key (kbd "M-n") 'hippie-expand)
-
 ;; 在Dired Mode跳转目录时共用一个缓冲区 (延迟加载)
-;; 主动加载 Dired Mode
-;; (require 'dired)
-;; (defined-key dired-mode-map (kbd "RET") 'dired-find-alternate-file)
 (with-eval-after-load 'dired
   (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file))
+
+;; Hippie增强补全
+(global-set-key (kbd "M-n") 'hippie-expand)
 
 ;; 使用<C-n/p>来选择补全项
 (with-eval-after-load 'company
@@ -40,9 +34,18 @@
 ;; 全局搜索
 (global-set-key (kbd "C-c p s") 'helm-do-ag-project-root)
 
-;; js2 mode 查找变量或函数 (o代表查找当前光标或行的变量)
+;; JS2 Mode
+;; 
+;; 查找变量或函数 (o代表查找当前光标或行的变量)
 (global-set-key (kbd "M-s i") 'counsel-imenu)
 (global-set-key (kbd "M-s o") 'occur-dwim)
+;; 代码重构
+(js2r-add-keybindings-with-prefix "C-c C-m")
+
+;; Org Mode
+;;
+;; org-agend的快捷键
+(global-set-key (kbd "C-c a") 'org-agenda)
 
 ;; 使用<C-w>来删除单词
 (global-set-key (kbd "C-w") 'backward-kill-word)

@@ -23,9 +23,6 @@
   '(
     ("cwjh" "吴剑辉" nil 1)
     ("czhbit" "北京理工大学珠海学院" nil 0)
-    ("t" "test" nil 0)
-    ("wjh" "吴剑辉" nil 2)
-    ("zhbit" "北京理工大学珠海学院" nil 1)
    ))
 
 (define-abbrev-table 'help-mode-abbrev-table '())

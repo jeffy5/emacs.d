@@ -21,11 +21,6 @@
 (recentf-mode 1)
 (setq recentf-max-menu-item 10)
 
-;; 高亮括号匹配
-(add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
-;; Lisp的单引号有其他意义, 所以除去单引号
-;; (sp-local-pair '(emacs-lisp-mode lisp-interaction-mode) "'" nil :actions nil)
-
 ;; 在选中时进行输入会删除选中的文本
 (delete-selection-mode 1)
 
@@ -58,27 +53,6 @@
       (progn
         (indent-buffer)
         (message "Indent buffer.")))))
-
-;; 缩写补全
-(setq-default abbrev-mode t)
-(define-abbrev-table 'global-abbrev-table '(
-                                            ;; wjh
-                                            ("cwjh" "吴剑辉")
-                                            ;; zhbit
-                                            ("czhbit" "北京理工大学珠海学院")
-					    ))
-
-;; Hippie增强补全
-(setq hippie-expand-try-function-list '(try-expand-debbrev
-                                        try-expand-debbrev-all-buffers
-                                        try-expand-debbrev-from-kill
-                                        try-complete-file-name-partially
-                                        try-complete-file-name
-                                        try-expand-all-abbrevs
-                                        try-expand-list
-                                        try-expand-line
-                                        try-complete-lisp-symbol-partially
-                                        try-complete-lisp-symbol))
 
 ;; 默认递归删除和复制文件夹
 (setq dired-recursive-deletes 'always)
