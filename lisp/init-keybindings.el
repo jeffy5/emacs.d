@@ -50,4 +50,9 @@
 ;; 使用<C-w>来删除单词
 (global-set-key (kbd "C-w") 'backward-kill-word)
 
+;; Python
+;;
+;; 扩展 for 语句
+(define-key yas-minor-mode-map (kbd "C-c k") 'yas-expand)
+
 (provide 'init-keybindings)

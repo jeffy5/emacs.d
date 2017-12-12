@@ -16,7 +16,12 @@
       (append
        '(("\\.js\\'" . js2-mode))
        '(("\\.html\\'" . web-mode))
+       '(("\\.vue\\'" . web-mode))
        auto-mode-alist))
+
+
+;; 设置 js2 mode 的缩进大小
+(add-hook 'js-mode-hook (lambda () (setq js2-basic-offset 2)))
 
 ;; 设置web mode的缩进大小配置
 (defun wjh-web-mode-indent-setup ()
@@ -64,7 +69,31 @@
           (lambda ()
             (setq imenu-create-index-function 'js2-imenu-make-index)))
 
+(require 'flycheck)
 ;; 调用Eslint语法检查
 (add-hook 'js2-mode-hook 'flycheck-mode)
+
+;; 禁用 jshint
+(setq-default flycheck-disabled-checkers
+  (append flycheck-disabled-checkers
+    '(javascript-jshint)))
+
+;; 使用 eslint
+(flycheck-add-mode 'javascript-eslint 'js2-mode)
+
+;; 关闭严格模式
+(add-hook 'js-mode-hook (lambda () (setq js2-strict-missing-semi-warning nil)))
+
+;; 使用 node_modules 目录下的eslint配置
+(defun wjh/use-eslint-from-node-modules ()
+  (let* ((root (locate-dominating-file
+                (or (buffer-file-name) default-directory)
+                "node_modules"))
+         (eslint (and root
+  (expand-file-name "node_modules/eslint/bin/eslint.js"
+                                        root))))
+    (when (and eslint (file-executable-p eslint))
+      (setq-local flycheck-javascript-eslint-executable eslint))))
+(add-hook 'flycheck-mode-hook #'wjh/use-eslint-from-node-modules)
 
 (provide 'init-js2-mode)

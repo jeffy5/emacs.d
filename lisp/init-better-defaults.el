@@ -39,6 +39,9 @@
 ;; 提示输入时用y/n取代yes/on
 (fset 'yes-or-no-p 'y-or-n-p)
 
+;; 设置空格作为默认缩进
+(setq-default indent-tabs-mode nil)
+
 ;; 代码缩进
 (defun indent-buffer()
   (interactive)

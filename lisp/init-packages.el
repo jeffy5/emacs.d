@@ -28,6 +28,7 @@
 (defvar wjh/packages '(
 		      ;; --- Auto-completion ---
 		      company
+		      company-jedi
 		      ;; --- Better Editor ---
 		      hungry-delete
 		      swiper
@@ -51,8 +52,11 @@
 		      js2-refactor
 		      nodejs-repl
 		      exec-path-from-shell
+		      ;; --- Python ---
+                      elpy
 		      ;; --- Themes ---
 		      monokai-theme
+                      material-theme
 		      ;; solarized-theme
 		      ) "Default packages")
 

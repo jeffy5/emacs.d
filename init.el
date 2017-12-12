@@ -24,5 +24,6 @@
 (require 'init-org)
 (require 'init-js2-mode)
 (require 'init-evil)
+(require 'init-elpy)
 
 (require 'init-keybindings)

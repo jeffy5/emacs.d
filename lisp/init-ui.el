@@ -27,6 +27,6 @@
 (global-hl-line-mode 1)
 
 ;; Set the theme
-(load-theme 'monokai 1)
+(load-theme 'material 1)
 
 (provide 'init-ui)
