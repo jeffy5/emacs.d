@@ -6,6 +6,8 @@
    2. 配置文件按功能区分
 
 ** 配置目录
+   
+#+BEGIN_EXAMPLE
    .emacs.d
     ├── init.el       配置文件的主要入口
     ├── elpa         所有插件都安装在这里
@@ -21,6 +23,7 @@
       ├── init-popwin.el            弹窗配置
       ├── init-snippet.el           代码块配置
       └── init-ui.el                界面配置
+#+END_EXAMPLE
 
 ** 引用插件说明
    - company              补全插件
