@@ -11,6 +11,7 @@
 ;; /_/   
 ;;
 ;; 启动evil
+(global-evil-leader-mode)
 (evil-mode 1)
 
 ;; 将 insert 模式中的快捷键清空
@@ -20,5 +21,8 @@
 ;; Evil Surround
 (require 'evil-surround)
 (global-evil-surround-mode)
+
+;; Evil nerd comment
+(evilnc-default-hotkeys)
 
 (provide 'init-evil)

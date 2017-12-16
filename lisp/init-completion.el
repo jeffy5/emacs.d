@@ -35,6 +35,8 @@
                                             ("cwjh" "吴剑辉")
                                             ;; zhbit
                                             ("czhbit" "北京理工大学珠海学院")
+                                            ;; vsplit
+                                            ("vsp" "vsplit")
 					    ))
 
 (provide 'init-completion)

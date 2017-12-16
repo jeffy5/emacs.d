@@ -19,4 +19,10 @@
 ;; 设置默认 Org Agenda 文件目录
 (setq org-agenda-files '("~/org"))
 
+;; 打开 emacs 默认打开 agenda
+(add-hook 'after-init-hook
+          (lambda ()
+            (org-agenda-list))
+          t)
+
 (provide 'init-org)

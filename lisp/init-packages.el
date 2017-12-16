@@ -12,7 +12,7 @@
 ;;         /____/
 ;; 
 
-;; Load the package list
+;; LOAD the package list
 (when (>= emacs-major-version 24)
   (require 'package)
   (package-initialize)
@@ -35,6 +35,9 @@
 		      counsel
 		      smartparens
 		      popwin
+                      window-numbering
+                      ace-jump-mode
+                      multiple-cursors
 		      ;; --- Global Search ---
 		      helm-ag
 		      ;; --- Linter ---
@@ -45,6 +48,8 @@
 		      ;; --- Evil ---
 		      evil
 		      evil-surround
+                      evil-nerd-commenter
+                      evil-leader
 		      ;; --- Major Mode ---
 		      web-mode
 		      js2-mode

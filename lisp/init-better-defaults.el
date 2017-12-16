@@ -21,6 +21,9 @@
 (recentf-mode 1)
 (setq recentf-max-menu-item 10)
 
+;; 关闭文件滑动控件
+(scroll-bar-mode -1)
+
 ;; 在选中时进行输入会删除选中的文本
 (delete-selection-mode 1)
 
@@ -64,9 +67,6 @@
 ;; 在Dired Mode跳转目录时共用一个缓冲区
 (put 'dired-find-alternate-file 'disabled nil)
 
-;; 启用 dired-x 可以让每一次进入 Dired 模式时，使用新的快捷键 C-x C-j 就可以进 入当前文件夹的所在的路径。
-(require 'dired-x)
-
 ;; 隐藏换行符
 (defun hidden-dos-eol ()
   "Do not show ^M in files containing mixed UNIX and DOS line endings."
@@ -74,5 +74,8 @@
   (unless buffer-display-table
     (setq buffer-display-table (make-display-table)))
     (aset buffer-display-table ?\^M []))
+
+;; 窗口跳转
+(window-numbering-mode 1)
 
 (provide 'init-better-defaults)

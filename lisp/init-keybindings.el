@@ -11,15 +11,17 @@
 ;; /_/ /_/   \__,_/  /_/  /_/ /_/   \__, /  /____/   (_)   \___/  /_/
 ;; 
 
-;; 打开最近修改的文件
-(global-set-key (kbd "C-x C-r") 'recentf-open-files)
-
 ;; 代码缩进
 ;; (global-set-key (kbd "C-M-\\") 'indent-region-or-buffer)
 
+;; 启用 dired-x 可以让每一次进入 Dired 模式时，使用新的快捷键 C-x C-j 就可以进 入当前文件夹的所在的路径。
 ;; 在Dired Mode跳转目录时共用一个缓冲区 (延迟加载)
+(require 'dired-x)
 (with-eval-after-load 'dired
   (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file))
+
+;; 快速打开文件
+(projectile-mode)
 
 ;; Hippie增强补全
 (global-set-key (kbd "M-n") 'hippie-expand)
@@ -30,9 +32,6 @@
   (define-key company-active-map (kbd "M-p") nil)
   (define-key company-active-map (kbd "C-n") #'company-select-next)
   (define-key company-active-map (kbd "C-p") #'company-select-previous))
-
-;; 全局搜索
-(global-set-key (kbd "C-c p s") 'helm-do-ag-project-root)
 
 ;; JS2 Mode
 ;; 
@@ -54,5 +53,31 @@
 ;;
 ;; 扩展 for 语句
 (define-key yas-minor-mode-map (kbd "C-c k") 'yas-expand)
+
+;; Evil
+;;
+(custom-set-variables '(evil-leader/leader "SPC"))
+(evil-leader/set-key
+ "ff" 'find-file
+ "fs" 'find-file-in-project
+ "fr" 'recentf-open-files
+ "fd" 'dired-jump
+ "bb" 'switch-to-buffer
+ "bl" 'list-buffers
+ "jw" 'ace-jump-word-mode
+ "jl" 'ace-jump-line-mode
+ "0"  'select-window-0
+ "1"  'select-window-1
+ "2"  'select-window-2
+ "3"  'select-window-3
+ "wv" 'split-window-right
+ "wh" 'split-window-below
+ "wo" 'delete-other-windows
+ "<SPC>"  'counsel-M-x
+ "cc" 'evilnc-comment-or-uncomment-lines
+ "gs" 'helm-do-ag-project-root
+ "n" 'mc/mark-next-like-this
+ "x" 'mc/skip-to-next-like-this
+ )
 
 (provide 'init-keybindings)

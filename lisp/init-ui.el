@@ -13,6 +13,9 @@
 ;; 设置行号的格式
 (setq linum-format "%d ")
 
+;; 关闭工具栏
+(tool-bar-mode -1)
+
 ;; 更改光标的样式（不能生效，解决方案见第二集）
 (setq-default cursor-type 'bar)
 
