@@ -60,6 +60,7 @@
 		      ;; --- Python ---
                       elpy
 		      ;; --- Themes ---
+                      color-theme
 		      monokai-theme
                       material-theme
 		      ;; solarized-theme
