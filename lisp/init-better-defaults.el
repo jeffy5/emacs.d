@@ -16,7 +16,7 @@
   (interactive)
   (find-file "~/.emacs.d/init.el"))
 
-;; 打开最近修改的文件
+;; 最近修改的文件
 (require 'recentf)
 (recentf-mode 1)
 (setq recentf-max-menu-item 10)
@@ -67,15 +67,21 @@
 ;; 在Dired Mode跳转目录时共用一个缓冲区
 (put 'dired-find-alternate-file 'disabled nil)
 
+;; 自动换行
+(toggle-truncate-lines 1)
+
 ;; 隐藏换行符
 (defun hidden-dos-eol ()
   "Do not show ^M in files containing mixed UNIX and DOS line endings."
   (interactive)
   (unless buffer-display-table
     (setq buffer-display-table (make-display-table)))
-    (aset buffer-display-table ?\^M []))
+  (aset buffer-display-table ?\^M []))
 
 ;; 窗口跳转
 (window-numbering-mode 1)
+
+(require 'neotree)
+(global-set-key [f4] 'neotree-toggle)
 
 (provide 'init-better-defaults)

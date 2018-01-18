@@ -38,6 +38,7 @@
                       window-numbering
                       ace-jump-mode
                       multiple-cursors
+                      neotree
 		      ;; --- Global Search ---
 		      helm-ag
 		      ;; --- Linter ---
@@ -50,10 +51,10 @@
 		      evil-surround
                       evil-nerd-commenter
                       evil-leader
-		      ;; --- Major Mode ---
+		      ;; --- HTML ---
 		      web-mode
+                      emmet-mode
 		      js2-mode
-		      ;; --- Minor Mode ---
 		      js2-refactor
 		      nodejs-repl
 		      exec-path-from-shell

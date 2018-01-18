@@ -9,5 +9,7 @@
 (setq elpy-rpc-python-command "python3")
 (setq python-shell-interpreter "python3")
 (setq pyvenv-virtualenvwrapper-python "/usr/bin/python3")
+(setq python-shell-interpreter "ipython"
+      python-shell-interpreter-args "-i")
 
 (provide 'init-elpy)

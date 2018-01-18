@@ -23,6 +23,6 @@
 (global-evil-surround-mode)
 
 ;; Evil nerd comment
-(evilnc-default-hotkeys)
+;; (evilnc-default-hotkeys)
 
 (provide 'init-evil)

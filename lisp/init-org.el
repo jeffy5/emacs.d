@@ -25,4 +25,9 @@
             (org-agenda-list))
           t)
 
+;; 设置 TODO 关键字
+(setq org-todo-keywords
+      (quote ((sequence "TODO(t)" "STARTED(s!/!)" "PAUSE(p!/!)" "ADDITION(a@/!)" "|" "DONE(d!/!)")
+              (sequence "WAITING(w@/!)" "PROJECT(P@)" "|" "CANCELLED(c@/!)"))))
+
 (provide 'init-org)

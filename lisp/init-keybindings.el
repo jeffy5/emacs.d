@@ -80,4 +80,11 @@
  "x" 'mc/skip-to-next-like-this
  )
 
+;; 取消 nerd comment `, ,` 的按键绑定
+(setq evilnc-hotkey-comment-operator "\\")
+
+;; <C-u> 忘上滚
+(global-set-key (kbd "C-u") 'scroll-down-command)
+
+
 (provide 'init-keybindings)

@@ -30,6 +30,18 @@
 (global-hl-line-mode 1)
 
 ;; Set the theme
-(load-theme 'material 1)
+(load-theme 'monokai 1)
+
+(defun on-frame-open (frame)
+  (if (not (display-graphic-p frame))
+      (set-face-background 'default "unspecified-bg" frame)))
+(on-frame-open (selected-frame))
+(add-hook 'after-make-frame-functions 'on-frame-open)
+
+(defun on-after-init ()
+  (unless (display-graphic-p (selected-frame))
+    (set-face-background 'default "unspecified-bg" (selected-frame))))
+
+(add-hook 'window-setup-hook 'on-after-init)
 
 (provide 'init-ui)
