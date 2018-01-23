@@ -17,7 +17,8 @@
 (setq org-src-fontify-natively t)
 
 ;; 设置默认 Org Agenda 文件目录
-(setq org-agenda-files '("~/org"))
+(setq org-agenda-files (list "~/org"
+                             "~/org/work"))
 
 ;; 打开 emacs 默认打开 agenda
 (add-hook 'after-init-hook
