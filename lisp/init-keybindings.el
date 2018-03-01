@@ -64,8 +64,7 @@
  "fd" 'dired-jump
  "bb" 'switch-to-buffer
  "bl" 'list-buffers
- "jw" 'ace-jump-word-mode
- "jl" 'ace-jump-line-mode
+ "j" 'ace-jump-word-mode
  "0"  'select-window-0
  "1"  'select-window-1
  "2"  'select-window-2
@@ -80,11 +79,13 @@
  "x" 'mc/skip-to-next-like-this
  )
 
+;; 设置 C-c 回到 normal mode
+(define-key evil-insert-state-map (kbd "C-c") 'evil-force-normal-state)
+
 ;; 取消 nerd comment `, ,` 的按键绑定
 (setq evilnc-hotkey-comment-operator "\\")
 
-;; <C-u> 忘上滚
+;; <C-u> 往上滚
 (global-set-key (kbd "C-u") 'scroll-down-command)
-
 
 (provide 'init-keybindings)

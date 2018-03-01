@@ -18,7 +18,8 @@
 
 ;; 设置默认 Org Agenda 文件目录
 (setq org-agenda-files (list "~/org"
-                             "~/org/work"))
+                             "~/org/work"
+                             "~/org/articles"))
 
 ;; 打开 emacs 默认打开 agenda
 (add-hook 'after-init-hook
@@ -30,5 +31,8 @@
 (setq org-todo-keywords
       (quote ((sequence "TODO(t)" "STARTED(s!/!)" "PAUSE(p!/!)" "ADDITION(a@/!)" "|" "DONE(d!/!)")
               (sequence "WAITING(w@/!)" "PROJECT(P@)" "|" "CANCELLED(c@/!)"))))
+
+;; Export to markdown
+(setq org-export-backends (quote (ascii html icalendar latex md)))
 
 (provide 'init-org)
