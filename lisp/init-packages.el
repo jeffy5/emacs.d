@@ -35,10 +35,11 @@
 		      counsel
 		      smartparens
 		      popwin
-                      window-numbering
-                      ace-jump-mode
-                      multiple-cursors
-                      neotree
+              window-numbering
+              ace-jump-mode
+              multiple-cursors
+              neotree
+              projectile
 		      ;; --- Global Search ---
 		      helm-ag
 		      ;; --- Linter ---
@@ -49,21 +50,21 @@
 		      ;; --- Evil ---
 		      evil
 		      evil-surround
-                      evil-nerd-commenter
-                      evil-leader
+              evil-nerd-commenter
+              evil-leader
 		      ;; --- HTML ---
 		      web-mode
-                      emmet-mode
+              emmet-mode
 		      js2-mode
 		      js2-refactor
 		      nodejs-repl
 		      exec-path-from-shell
 		      ;; --- Python ---
-                      elpy
+              elpy
 		      ;; --- Themes ---
-                      color-theme
+              color-theme
 		      monokai-theme
-                      material-theme
+              material-theme
 		      ;; solarized-theme
 		      ) "Default packages")
 

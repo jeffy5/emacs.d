@@ -5,14 +5,12 @@
 ;; /___/  /_/ /_/  /_/   \__/   (_)   \___/  /_/
 ;; 
 
-(package-initialize)
-
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
 ;; Package Management
 ;; ---------------------
-(require 'init-ui)
 (require 'init-packages)
+(require 'init-ui)
 
 (require 'init-completion)
 (require 'init-smartparens)
@@ -24,6 +22,6 @@
 (require 'init-org)
 (require 'init-js2-mode)
 (require 'init-evil)
-(require 'init-elpy)
+;; (require 'init-elpy)
 
 (require 'init-keybindings)
