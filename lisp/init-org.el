@@ -17,15 +17,17 @@
 (setq org-src-fontify-natively t)
 
 ;; 设置默认 Org Agenda 文件目录
-(setq org-agenda-files (list "~/org"
-                             "~/org/work"
-                             "~/org/articles"))
+;; (setq org-agenda-files (list "~/org"
+;;                              "~/org/work"
+;;                              "~/org/life"
+;;                              "~/org/articles"))
+(setq org-agenda-files (directory-files-recursively "~/org/" "\\.org$"))
 
 ;; 打开 emacs 默认打开 agenda
-(add-hook 'after-init-hook
-          (lambda ()
-            (org-agenda-list))
-          t)
+;; (add-hook 'after-init-hook
+;;           (lambda ()
+;;             (org-agenda-list))
+;;           t)
 
 ;; 设置 TODO 关键字
 (setq org-todo-keywords
