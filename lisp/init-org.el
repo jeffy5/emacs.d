@@ -16,25 +16,71 @@
 (require 'org)
 (setq org-src-fontify-natively t)
 
-;; 设置默认 Org Agenda 文件目录
-;; (setq org-agenda-files (list "~/org"
-;;                              "~/org/work"
-;;                              "~/org/life"
-;;                              "~/org/articles"))
+;; Set org agenda files.
 (setq org-agenda-files (directory-files-recursively "~/org/" "\\.org$"))
 
-;; 打开 emacs 默认打开 agenda
-;; (add-hook 'after-init-hook
-;;           (lambda ()
-;;             (org-agenda-list))
-;;           t)
+;; Set refile targets.
+(setq org-refile-targets (mapcar #'(lambda(filename)
+                                     (cons filename (cons :maxlevel 4)))
+                                 org-agenda-files))
 
-;; 设置 TODO 关键字
+;; Config refile. 
+(setq org-refile-allow-creating-parent-nodes 'confirm)
+(setq org-refile-use-outline-path 'full-file-path)
+
+;; Set TODO keywords.
 (setq org-todo-keywords
-      (quote ((sequence "TODO(t)" "STARTED(s!/!)" "PAUSE(p!/!)" "ADDITION(a@/!)" "|" "DONE(d!/!)")
-              (sequence "WAITING(w@/!)" "PROJECT(P@)" "|" "CANCELLED(c@/!)"))))
+    '((sequence "TODO(t)" "WAITING(w@/!)" "|" "DONE(d!/!)" "CANCEL(c@/!)")
+    (sequence "RESEARCH(r!/!)" "PRODUCT(p!/!)" "DEVELOP(d!/!)" "TEST(T!/!)" "|" "RELEASED(r@/!)" "CANCELED(c@/!)")))
 
-;; Export to markdown
-(setq org-export-backends (quote (ascii html icalendar latex md)))
+;; Set tags.
+(setq org-tag-alist '((:startgroup . nil)
+                      ("@home" . ?h) ("@company" . ?w)
+                      (:endgroup)
+
+                      ;; Project related.
+                      (:startgrouptag)
+                      ("project")
+                      (:grouptags)
+                      ("product" . ?P) ("design" . ?D)
+                      (:endgrouptag)
+
+                      ;; Develop related.
+                      (:startgrouptag)
+                      ("develop")
+                      (:grouptags)
+                      ("frontend" . ?f) ("backend" . ?b) ("hardware" . ?H)
+                      (:endgrouptag)
+
+                      ;; Business related.
+                      (:startgrouptag)
+                      ("business")
+                      (:grouptags)
+                      ("discovery" . ?D) ("market" . ?m) ("interaction" . ?i)
+                      (:endgrouptag)
+
+                      ("operation" . ?o) ("review" . ?r)))
+
+;; Set capture templates.
+(setq org-capture-templates
+      '(("r" "Reminder" entry (file+headline "~/org/reminder.org" "Reminder")
+         "* TODO %?\n  %i\n")
+        ("i" "Idea" entry (file+headline "~/org/idea.org" "Idea")
+         "* %?\nMarked on %U\n  %i\n  %a")))
+
+;; Set default columns.
+(setq org-columns-default-format "%TODO(TODO) %ITEM(Task) %TAGS(Tags) %CLOCKSUM(Clock) %CLOCKSUM_T(Clock today) %Effort(Effort){:}")
+
+;; Set global properties.
+(setq org-global-properties '(("Effort_ALL" . "0:15 0:30 0:45 1:00 2:00 3:00 4:00 5:00 6:00 0:00")))
+
+;; Set export backends.
+(setq org-export-backends '(ascii html icalendar latex md))
+
+;; Set log drawer.
+(setq org-log-into-drawer "LOGS")
+
+;; Set org modules.
+(setq org-modules '(ol-bbdb ol-bibtex ol-docview ol-eww ol-gnus org-habit ol-info ol-irc ol-mhe ol-rmail ol-w3m))
 
 (provide 'init-org)

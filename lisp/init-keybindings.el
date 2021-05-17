@@ -45,6 +45,8 @@
 ;;
 ;; org-agend的快捷键
 (global-set-key (kbd "C-c a") 'org-agenda)
+(global-set-key (kbd "C-c l") 'org-store-link)
+(global-set-key (kbd "C-c c") 'org-capture)
 
 ;; 使用<C-w>来删除单词
 (global-set-key (kbd "C-w") 'backward-kill-word)
